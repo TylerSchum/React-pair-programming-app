@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-+ENW/yibaokMnme+vBLnHMphUYxHs34h9lpdbSLuAwGkOKFRl4C34WkjazBtb7eT" crossorigin="anonymous">
+    <style>
+      body {
+        font-size: 2em;
+      }
+
+      button:focus {
+        outline: 0;
+      }
+
+      .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+        outline: 0;
+        box-shadow: 0;
+      }
+
+      .btn-default:focus, .btn-default.focus {
+        border-color: inherit;
+        border-width: 2px;
+      }
+
+      .clickMe:before {
+        position: relative;
+        left: -80px;
+        visibility: hidden;
+        color: white;
+      }
+
+      button:hover .clickMe:before {
+        animation: flow-in 200ms ease forwards;
+      }
+
+      @keyframes flow-in {
+        0% {
+          visibility: inherit;
+        }
+        100% {
+          visibility: visible;
+          left: -10px;
+        }
+      }
+
+      .btn {
+        padding-left: -5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main"></div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/bundle.js"></script>
+    <script src="https://crate.widgetbot.io/v2" defer async data-cfasync="false">
+      new Crate({ 
+        "server": "392437423662956555", 
+        "channel": "392437423662956557", 
+        "options": "1110",
+        "buttons": {
+          "primary": "Click to Join",
+          "secondary": "Pair Programmers"
+        },
+        "position": {
+          "x": "right",
+          "y": "bottom"
+        }
+      })
+    </script>
+  </body>
+</html>
